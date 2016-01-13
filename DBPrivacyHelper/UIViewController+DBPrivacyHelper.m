@@ -15,7 +15,7 @@
 
 - (void)showPrivacyHelperForType:(DBPrivacyType)type
 {
-    [self showPrivacyHelperForType:type controller:nil didPresent:nil didDismiss:nil useDefaultSettingPane:YES];
+    [self showPrivacyHelperForType:type controller:nil didPresent:nil didDismiss:nil useDefaultSettingPane:NO];
 }
 
 - (void)showPrivacyHelperForType:(DBPrivacyType)type

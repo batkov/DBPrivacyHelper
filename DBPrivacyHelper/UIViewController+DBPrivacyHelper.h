@@ -31,7 +31,7 @@
  *  @param controllerBlock    Customize the DBPrivateHelperController view controller
  *  @param didPresent         Customize the completion block of presentViewController:animated:completion:
  *  @param didDismiss         Customize the completion block of dismissViewControllerAnimated:completion:
- *  @param defaultSettingPane If NO force to use DBPrivateHelperController instead of the default settings pane on iOS 8. Only for iOS 8. Default value is YES.
+ *  @param defaultSettingPane If NO force to use DBPrivateHelperController instead of the default settings pane on iOS 8. Only for iOS 8. Default value is NO.
  */
 - (void)showPrivacyHelperForType:(DBPrivacyType)type
                       controller:(void(^)(DBPrivateHelperController *vc))controllerBlock
