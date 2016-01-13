@@ -25,7 +25,10 @@
            useDefaultSettingPane:(BOOL)defaultSettingPane {
     
     if (IS_IOS_8 && defaultSettingPane) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wtautological-pointer-compare"
         if (&UIApplicationOpenSettingsURLString != NULL) {
+#pragma clang diagnostic pop
             NSURL *appSettings = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
             [[UIApplication sharedApplication] openURL:appSettings];
             return;
