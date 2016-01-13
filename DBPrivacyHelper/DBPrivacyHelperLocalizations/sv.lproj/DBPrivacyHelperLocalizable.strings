@@ -1,0 +1,32 @@
+/*
+ DBPrivacyHelperLocalizable.strings
+ DBPrivacyHelper
+ 
+ Created by iBo on 10/11/14.
+ Copyright (c) 2014 iBo. All rights reserved.
+ */
+
+"Close" = "Stäng";
+"Settings" = "Inställningar";
+
+"Location Services" = "Platstjänster";
+"Photos" = "Bilder";
+"Camera" = "Kamera";
+"Health" = "Hälsa";
+"HomeKit" = "HomeKit";
+"Motion Activity" = "Rörelse och motion";
+"Contacts" = "Kontakter";
+"Notifications" = "Notiser";
+"Reminders" = "Påminnelsers";
+"Calendars" = "Kalendrar";
+"Microphone" = "Mikrofon";
+"Twitter" = "Twitter";
+"Facebook" = "Facebook";
+
+"Allow access to \"%@\"\nwith these steps:" = "Tillåt åtkomst \"%@\"\nmed dessa steg:";
+
+"Open device settings" = "Öppna Inställningar";
+"Tap on Privacy" = "Tryck på Integritetsskydd";
+"Tap on \"%@\"" = "Tryck på \"%@\"";
+"Allow your application to use \"%@\"" = "Tillåt att din applikation använder \"%@\"";
+"Select the alert style you prefer" = "Välj den notisstil du föredra";

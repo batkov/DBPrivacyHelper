@@ -1,0 +1,32 @@
+/*
+ DBPrivacyHelperLocalizable.strings
+ DBPrivacyHelper
+ 
+ Created by iBo on 10/11/14.
+ Copyright (c) 2014 iBo. All rights reserved.
+ */
+
+"Close" = "Terminer";
+"Settings" = "Réglages";
+
+"Location Services" = "Service de localisation";
+"Photos" = "Photos";
+"Camera" = "Appareil photo";
+"Health" = "Santé";
+"HomeKit" = "HomeKit";
+"Motion Activity" = "Mouvements et forme";
+"Contacts" = "Contacts";
+"Notifications" = "Notifications";
+"Reminders" = "Rappels";
+"Calendars" = "Calendriers";
+"Microphone" = "Micro";
+"Twitter" = "Twitter";
+"Facebook" = "Facebook";
+
+"Allow access to \"%@\"\nwith these steps:" = "Autorisez l'accès à \"%@\"\ncomme indiqué ci-dessous:";
+
+"Open device settings" = "Allez dans Réglages";
+"Tap on Privacy" = "Cliquez sur Confidentialité";
+"Tap on \"%@\"" = "Cliquez sur \"%@\"";
+"Allow your application to use \"%@\"" = "Autoriser l'application à utiliser \"%@\"";
+"Select the alert style you prefer" = "Selectionnez le type d'alerte que vous préférez";
