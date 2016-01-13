@@ -57,7 +57,7 @@ NSString *const kDBPrivateHelperCellIdentifier = @"kDBPrivateHelperCellIdentifie
 - (void) setIcon:(NSString *)icon text:(NSString *)text row:(NSInteger)row {
     _iconView.image = [UIImage imageNamed:icon inBundle:[NSBundle bundleForClass:[DBPrivateHelperCell class]] compatibleWithTraitCollection:nil];
     _cellLabel.text = text;
-    self.textLabel.text = [NSString stringWithFormat:@".%li", (long)row];
+    self.textLabel.text = [NSString stringWithFormat:@"%li.", (long)row];
 }
 
 @end
