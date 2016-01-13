@@ -30,7 +30,7 @@
     button.translatesAutoresizingMaskIntoConstraints = NO;
     button.backgroundColor = [UIColor colorWithWhite:0 alpha:.85];
     [button setTitle:@"Open" forState:UIControlStateNormal];
-//    [button addTarget:self action:@selector(openHelper) forControlEvents:UIControlEventTouchUpInside];
+    //    [button addTarget:self action:@selector(openHelper) forControlEvents:UIControlEventTouchUpInside];
     [button addTarget:self action:@selector(openHelperToCustomize) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
@@ -62,6 +62,7 @@
 - (void) openHelperToCustomize {
     [self showPrivacyHelperForType:DBPrivacyTypeLocation controller:^(DBPrivateHelperController *vc) {
         //customize the view controller to present
+        //vc.showOpenSettings = NO;
     } didPresent:^{
         //customize the completion block of presentViewController:animated:completion:
     } didDismiss:^{

@@ -9,6 +9,7 @@
 #import "DBPrivateHelperController.h"
 #import "DBPrivacyHelperDataSource.h"
 #import "UIImage+ImageEffects.h"
+#import "UIViewController+DBPrivacyHelper.h"
 
 @interface DBPrivateHelperController () <UITableViewDelegate> {
     DBPrivacyType _type;
@@ -33,6 +34,7 @@
     if (self) {
         _type = type;
         _canRotate = NO;
+        _showOpenSettings = YES;
         _statusBarStyle = UIStatusBarStyleLightContent;
     }
     return self;
@@ -101,12 +103,41 @@
     [_closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_closeButton addTarget:self action:@selector(bdph_dismissHelper:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_closeButton];
-
-    NSDictionary *views = NSDictionaryOfVariableBindings(_tableView, _closeButton);
-
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_closeButton]-20-|" options:0 metrics:nil views:views]];
+    if (self.showOpenSettings && [self canOpenAppSettings]) {
+        _settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _settingsButton.translatesAutoresizingMaskIntoConstraints = NO;
+        _settingsButton.titleLabel.font = [UIFont boldSystemFontOfSize:12.0];
+        _settingsButton.backgroundColor = [UIColor clearColor];
+        [_settingsButton setTitle:[@"Settings" dbph_LocalizedString].uppercaseString forState:UIControlStateNormal];
+        [_settingsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_settingsButton addTarget:self action:@selector(bdph_showSettings:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_settingsButton];
+    }
+    UIButton * leftButton = _closeButton;
+    UIButton * rightButton = _settingsButton;
+    NSMutableDictionary *views = [NSDictionaryOfVariableBindings(_tableView) mutableCopy];
+    
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_closeButton(30)]-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
+    BOOL verticalConstantAdded = NO;
+    if (leftButton) {
+        [views addEntriesFromDictionary:NSDictionaryOfVariableBindings(leftButton)];
+        
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[leftButton]" options:0 metrics:nil views:views]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[leftButton(30)]-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
+        verticalConstantAdded = YES;
+    }
+    if (rightButton) {
+        [views addEntriesFromDictionary:NSDictionaryOfVariableBindings(rightButton)];
+        
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[rightButton]-20-|" options:0 metrics:nil views:views]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[rightButton(30)]-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
+        verticalConstantAdded = YES;
+    }
+    
+    if (!verticalConstantAdded) {
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_tableView]-0-|" options:0 metrics:nil views:views]];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -135,6 +166,11 @@
     [self dismissViewControllerAnimated:YES completion:self.didDismissViewController];
 }
 
+- (void)bdph_showSettings:(UIButton *)button
+{
+    [self openAppSettings];
+    [self bdph_dismissHelper:button];
+}
 
 #pragma mark - Status Bar Style
 

@@ -44,4 +44,16 @@
  *  @return An UIImage of your Window
  */
 - (UIImage *)snapshot;
+
+/**
+ *  Detects settings open ability
+ *
+ *  @return YES if iOS8 and UIApplicationOpenSettingsURLString are presented
+ */
+- (BOOL)canOpenAppSettings;
+
+/**
+ *  Opens settings for app
+ */
+- (void)openAppSettings;
 @end

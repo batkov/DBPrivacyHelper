@@ -30,9 +30,22 @@ typedef void (^DBPrivateHelperCompletionBlock)();
 @property (nonatomic, assign) BOOL canRotate;
 
 /**
+ *  Set if the controller should show button "Settings".
+ *  Default is YES.
+ *  YES will be ignored if settings cannot be opened.
+ */
+@property (nonatomic, assign) BOOL showOpenSettings;
+
+/**
  *  The close button
  */
 @property (nonatomic, readonly) UIButton *closeButton;
+
+/**
+ *  The settings button. If 'showOpenSettings' set to NO or
+ *  settings cannot be opened will be nil
+ */
+@property (nonatomic, readonly) UIButton *settingsButton;
 
 /**
  *  The snapshot of the window
