@@ -1,0 +1,32 @@
+/*
+ DBPrivacyHelperLocalizable.strings
+ DBPrivacyHelper
+ 
+ Created by iBo on 10/11/14.
+ Copyright (c) 2014 iBo. All rights reserved.
+ */
+
+"Close" = "Закрити";
+"Settings" = "Параметри";
+
+"Location Services" = "Служба глокації";
+"Photos" = "Фотографії";
+"Camera" = "Камера";
+"Health" = "Здоров'я";
+"HomeKit" = "HomeKit";
+"Motion Activity" = "Motion Activity";
+"Contacts" = "Контакти";
+"Notifications" = "Сповіщення";
+"Reminders" = "Нагадування";
+"Calendars" = "Календарі";
+"Microphone" = "Мікрофон";
+"Twitter" = "Twitter";
+"Facebook" = "Facebook";
+
+"Allow access to \"%@\"\nwith these steps:" = "Надайте доступ до \"%@\"\nслідуючи цими кроками:";
+
+"Open device settings" = "Відкрийте параметри пристрою";
+"Tap on Privacy" = "Натисніть на Приватність";
+"Tap on \"%@\"" = "Натисніть на \"%@\"";
+"Allow your application to use \"%@\"" = "Надайте додатку доступ використовувати \"%@\"";
+"Select the alert style you prefer" = "Виберіть бажаний вид сповіщень";

@@ -39,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		2D8897741A5A1F5200AE811F /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
+		3D4CAE081CB82A300072D52E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
+		3D4CAE091CB82BBC0072D52E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 		3D88920A1C46D02000DC735A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 		3D88920B1C46D06F00DC735A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 		4360CC281AE2980D003D43EC /* DBPrivateHelperControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrivateHelperControllerTests.m; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				9AE88D0C1A10C4AE00086242 /* Frameworks */,
 				9AE88D0D1A10C4AE00086242 /* Resources */,
 				D03A24F83A3935D7F5441893 /* Copy Pods Resources */,
+				6144274387879580DDFB91CF /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,6 +281,8 @@
 				"pt-PT",
 				fr,
 				sv,
+				ru,
+				uk,
 			);
 			mainGroup = 9AE88CED1A10C4AE00086242;
 			productRefGroup = 9AE88CF71A10C4AE00086242 /* Products */;
@@ -315,6 +320,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6144274387879580DDFB91CF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DBPrivacyHelperExampleTests/Pods-DBPrivacyHelperExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9ABA1DCA1A6D6749000DA480 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,6 +427,8 @@
 				EBF7EF601A66DA87004C5784 /* pt-PT */,
 				3D88920A1C46D02000DC735A /* fr */,
 				3D88920B1C46D06F00DC735A /* sv */,
+				3D4CAE081CB82A300072D52E /* ru */,
+				3D4CAE091CB82BBC0072D52E /* uk */,
 			);
 			name = DBPrivacyHelperLocalizable.strings;
 			sourceTree = "<group>";
@@ -499,6 +521,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -511,6 +534,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
