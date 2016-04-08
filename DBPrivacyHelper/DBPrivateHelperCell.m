@@ -27,7 +27,7 @@ NSString *const kDBPrivateHelperCellIdentifier = @"kDBPrivateHelperCellIdentifie
         
         self.textLabel.font = [UIFont systemFontOfSize:10.0];
         self.textLabel.textColor = [UIColor colorWithWhite:1.0 alpha:.75];
-        
+        self.textLabel.translatesAutoresizingMaskIntoConstraints = NO;
         _iconView = [[UIImageView alloc] init];
         _iconView.translatesAutoresizingMaskIntoConstraints = NO;
         [self.contentView addSubview:_iconView];
@@ -41,14 +41,27 @@ NSString *const kDBPrivateHelperCellIdentifier = @"kDBPrivateHelperCellIdentifie
         _cellLabel.numberOfLines = 0;
         _cellLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self.contentView addSubview:_cellLabel];
-        
-        NSDictionary *views = NSDictionaryOfVariableBindings(_iconView, _cellLabel);
+        UILabel * textLabel = self.textLabel;
+        NSDictionary *views = NSDictionaryOfVariableBindings(_iconView, _cellLabel, textLabel);
         
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[_iconView(30)]-20-[_cellLabel]-20-|" options:0 metrics:nil views:views]];
+        [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:textLabel
+                                                                     attribute:NSLayoutAttributeRight
+                                                                     relatedBy:NSLayoutRelationEqual
+                                                                        toItem:_cellLabel
+                                                                     attribute:NSLayoutAttributeLeft multiplier:1.f
+                                                                      constant:-3]];
+        [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:textLabel
+                                                                     attribute:NSLayoutAttributeCenterY
+                                                                     relatedBy:NSLayoutRelationEqual
+                                                                        toItem:_cellLabel
+                                                                     attribute:NSLayoutAttributeCenterY multiplier:1.f
+                                                                      constant:0]];
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_iconView(30)]"
                                                                                  options:0 metrics:nil views:views]];
-        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_cellLabel]-0-|"
+        [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[_cellLabel]-0-|"
                                                                                  options:0 metrics:nil views:views]];
+        
         [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_iconView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
     }
     return self;
