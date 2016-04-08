@@ -10,7 +10,7 @@
 
 #ifndef DBPrivacyHelperLocalizableStrings
 #define DBPrivacyHelperLocalizableStrings(key) \
-NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", nil)
+NSLocalizedStringFromTable(key, @"DBPrivacyHelperLocalizable", [NSBundle bundleWithIdentifier:@"DBPrivacyHelper"])
 #endif
 
 @implementation NSString (DBPrivacyHelper)
