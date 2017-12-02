@@ -15,7 +15,7 @@
 /**
  *  Dismiss completion block
  */
-typedef void (^DBPrivateHelperCompletionBlock)();
+typedef void (^DBPrivateHelperCompletionBlock)(void);
 
 @interface DBPrivateHelperController : UIViewController
 
@@ -39,28 +39,28 @@ typedef void (^DBPrivateHelperCompletionBlock)();
 /**
  *  The close button
  */
-@property (nonatomic, readonly) UIButton *closeButton;
+@property (nonatomic, readonly, nonnull) UIButton *closeButton;
 
 /**
  *  The settings button. If 'showOpenSettings' set to NO or
  *  settings cannot be opened will be nil
  */
-@property (nonatomic, readonly) UIButton *settingsButton;
+@property (nonatomic, readonly, nullable) UIButton *settingsButton;
 
 /**
  *  The snapshot of the window
  */
-@property (nonatomic, strong) UIImage *snapshot;
+@property (nonatomic, strong, nullable) UIImage *snapshot;
 
 /**
  *  Personal App Icon name for DBPrivacyTypeNotifications
  */
-@property (nonatomic, strong) NSString *appIcon;
+@property (nonatomic, strong, nullable) NSString *appIcon;
 
 /**
  *  The dismiss completion block
  */
-@property (nonatomic, copy) DBPrivateHelperCompletionBlock didDismissViewController;
+@property (nonatomic, copy, nullable) DBPrivateHelperCompletionBlock didDismissViewController;
 
 /**
  *  Create an instance of DBPrivateHelperController
@@ -69,5 +69,5 @@ typedef void (^DBPrivateHelperCompletionBlock)();
  *
  *  @return An instance of DBPrivateHelperController
  */
-+ (instancetype)helperForType:(DBPrivacyType)type;
++ (instancetype __nonnull)helperForType:(DBPrivacyType)type;
 @end
