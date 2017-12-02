@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DBPrivacyHelper"
-  s.version      = "0.6.4"
+  s.version      = "0.7.0"
   s.summary      = "Quick category to explain the right place to enable your privacy settings"
 
   s.description  = <<-DESC
