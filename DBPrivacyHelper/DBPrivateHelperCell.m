@@ -14,6 +14,7 @@ NSString *const kDBPrivateHelperCellIdentifier = @"kDBPrivateHelperCellIdentifie
 @implementation DBPrivateHelperCell {
     UIImageView *_iconView;
     UILabel *_cellLabel;
+    UILabel *_numberLabel;
 }
 
 
@@ -25,13 +26,17 @@ NSString *const kDBPrivateHelperCellIdentifier = @"kDBPrivateHelperCellIdentifie
         self.contentView.backgroundColor = self.backgroundColor;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        self.textLabel.font = [UIFont systemFontOfSize:10.0];
-        self.textLabel.textColor = [UIColor colorWithWhite:1.0 alpha:.75];
-        self.textLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        _numberLabel = [[UILabel alloc] init];
+        
+        _numberLabel.font = [UIFont systemFontOfSize:10.0];
+        _numberLabel.textColor = [UIColor colorWithWhite:1.0 alpha:.75];
+        _numberLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [self.contentView addSubview:_numberLabel];
+        
         _iconView = [[UIImageView alloc] init];
         _iconView.translatesAutoresizingMaskIntoConstraints = NO;
         [self.contentView addSubview:_iconView];
-        
         _cellLabel = [[UILabel alloc] init];
         _cellLabel.translatesAutoresizingMaskIntoConstraints = NO;
         _cellLabel.backgroundColor = [UIColor clearColor];
@@ -41,7 +46,7 @@ NSString *const kDBPrivateHelperCellIdentifier = @"kDBPrivateHelperCellIdentifie
         _cellLabel.numberOfLines = 0;
         _cellLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self.contentView addSubview:_cellLabel];
-        UILabel * textLabel = self.textLabel;
+        UILabel * textLabel = _numberLabel;
         NSDictionary *views = NSDictionaryOfVariableBindings(_iconView, _cellLabel, textLabel);
         
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[_iconView(30)]-20-[_cellLabel]-20-|" options:0 metrics:nil views:views]];
@@ -70,7 +75,7 @@ NSString *const kDBPrivateHelperCellIdentifier = @"kDBPrivateHelperCellIdentifie
 - (void) setIcon:(NSString *)icon text:(NSString *)text row:(NSInteger)row {
     _iconView.image = [UIImage imageNamed:icon inBundle:[NSBundle bundleForClass:[DBPrivateHelperCell class]] compatibleWithTraitCollection:nil];
     _cellLabel.text = text;
-    self.textLabel.text = [NSString stringWithFormat:@"%li.", (long)row];
+    _numberLabel.text = [NSString stringWithFormat:@"%li.", (long)row];
 }
 
 @end
