@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DD3F83B1FD30190005BB6A7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3F83A1FD30190005BB6A7 /* Launch Screen.storyboard */; };
 		4360CC291AE2980D003D43EC /* DBPrivateHelperControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4360CC281AE2980D003D43EC /* DBPrivateHelperControllerTests.m */; };
 		4360CC2B1AE2B193003D43EC /* DBPrivacyHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4360CC2A1AE2B193003D43EC /* DBPrivacyHelperTests.m */; };
 		5CF3050C38013A8B5C87B459 /* libPods-DBPrivacyHelperExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D53EF3130F07107F2AA7B2A9 /* libPods-DBPrivacyHelperExampleTests.a */; };
@@ -43,6 +44,7 @@
 		3D4CAE091CB82BBC0072D52E /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 		3D88920A1C46D02000DC735A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
 		3D88920B1C46D06F00DC735A /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/DBPrivacyHelperLocalizable.strings; sourceTree = "<group>"; };
+		3DD3F83A1FD30190005BB6A7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4360CC281AE2980D003D43EC /* DBPrivateHelperControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrivateHelperControllerTests.m; sourceTree = "<group>"; };
 		4360CC2A1AE2B193003D43EC /* DBPrivacyHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrivacyHelperTests.m; sourceTree = "<group>"; };
 		7E68E9B92E9D65AA1F13A5AF /* Pods-DBPrivacyHelperExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DBPrivacyHelperExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DBPrivacyHelperExampleTests/Pods-DBPrivacyHelperExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				9AD85B151A5C8861003F80D6 /* testIcon.png */,
 				9AE88D311A10FEA000086242 /* bg.jpg */,
 				9AE88CF91A10C4AE00086242 /* Supporting Files */,
+				3DD3F83A1FD30190005BB6A7 /* Launch Screen.storyboard */,
 			);
 			path = DBPrivacyHelperExample;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				9AE88D321A10FEA000086242 /* bg.jpg in Resources */,
 				9AE88D431A11050D00086242 /* DBPrivacyHelperAssets.xcassets in Resources */,
 				9AD85B161A5C8861003F80D6 /* testIcon.png in Resources */,
+				3DD3F83B1FD30190005BB6A7 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
