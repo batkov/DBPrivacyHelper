@@ -115,7 +115,9 @@
     }
     UIButton * leftButton = _closeButton;
     UIButton * rightButton = _settingsButton;
-    NSMutableDictionary *views = [NSDictionaryOfVariableBindings(_tableView) mutableCopy];
+    id topGuide = self.topLayoutGuide;
+    id bottomGuide = self.bottomLayoutGuide;
+    NSMutableDictionary *views = [NSDictionaryOfVariableBindings(_tableView, topGuide, bottomGuide) mutableCopy];
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
     BOOL verticalConstantAdded = NO;
@@ -123,19 +125,21 @@
         [views addEntriesFromDictionary:NSDictionaryOfVariableBindings(leftButton)];
         
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[leftButton]" options:0 metrics:nil views:views]];
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[leftButton(30)]-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topGuide]-20-[leftButton(30)]-0-[_tableView]-[bottomGuide]|" options:0 metrics:nil views:views]];
+        [[leftButton.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20] setActive:true];
         verticalConstantAdded = YES;
     }
     if (rightButton) {
         [views addEntriesFromDictionary:NSDictionaryOfVariableBindings(rightButton)];
         
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[rightButton]-20-|" options:0 metrics:nil views:views]];
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[rightButton(30)]-0-[_tableView]-0-|" options:0 metrics:nil views:views]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topGuide]-20-[rightButton(30)]-0-[_tableView]-[bottomGuide]|" options:0 metrics:nil views:views]];
+        [[rightButton.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20] setActive:true];
         verticalConstantAdded = YES;
     }
     
     if (!verticalConstantAdded) {
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_tableView]-0-|" options:0 metrics:nil views:views]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topGuide]-20-[_tableView]-[bottomGuide]|" options:0 metrics:nil views:views]];
     }
     
 }
