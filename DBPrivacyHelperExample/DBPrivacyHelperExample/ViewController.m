@@ -48,11 +48,6 @@
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void) openHelper {
     static DBPrivacyType type, typeCount = DBPrivacyTypeFacebook + 1;
     [self showPrivacyHelperForType:type];
